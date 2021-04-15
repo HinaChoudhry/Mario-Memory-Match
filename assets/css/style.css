@@ -94,8 +94,8 @@
 
    .game-bg {
     background: url("../images/gamebg1.jpg");
-    height: 100vh;
-    width: 100vw;
+    height: auto;
+    width: auto;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -114,7 +114,30 @@
       box-sizing: border-box;
   }
 
+.game-info-container {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+}
+  .game-container { 
+      display:grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+    margin: 50px;
+    justify-content: center;
+
+  }
+
+
   .game-text {
       font-size: 2vw;
       text-align: center;
+   
+  }
+
+  .card {
+      background-color:white;
+      height: 166px;
+      width: 141px;
+
   }
