@@ -118,10 +118,12 @@
   .game-container { 
     display: grid;
     grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(2, auto);
     grid-gap: 10px;
     margin: 50px auto;
     justify-content: center;
     perspective: 500px;
+    
 
   }
   .game-info-container {
@@ -132,10 +134,6 @@
   }
 
   
-
-
- 
-
   .game-text {
       font-size: 2vw;
       text-align: center;
@@ -146,6 +144,8 @@
       position: relative;
       height: 166px;
       width: 141px;
+      background-color: unset;
+      border: unset;
 
   }
 
@@ -178,14 +178,20 @@
     transform: rotateY(0); 
   }
 
-  .card.hover .card-back {
-    transform: rotateY(-180deg); 
-  }
-  
+  .card.visible .card-back{
+    transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    
+ }
 
-  .card.hover .card-front {
-    transform: rotateY(0); 
-  }
+ .card.visible .card-front{
+    transform: rotateY(0);
+    -webkit-transform: rotateY(0);
+    -moz-transform: rotateY(0);
+    -o-transform: rotateY(0);
+ }
 
   card-front:hover .card-value (
       transform: scale(1):
@@ -195,4 +201,9 @@
       transform: scale(.9);
   }
 
-  
+  @media (max-width:600px){
+    .game-container{
+        -ms-grid-columns: auto 10px auto;
+        grid-template-columns: repeat(2,auto);
+    }
+    
