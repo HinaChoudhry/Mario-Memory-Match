@@ -3,7 +3,7 @@
 
 
 .landingbg {
-    background: url("../images/home.jpg");
+    background: url("../images/landingbg.jpg");
     height: 100vh;
     width: 100gvw;
     background-repeat: no-repeat;
@@ -18,13 +18,50 @@
 
 #button {
     font-family: "Press Start 2P", serif;
-    color: #fff;
     position: absolute;
     top: 95%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 
+}
+
+.bg-modal {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    width: 500px;
+    height: 300px;
+    background-color: rgb(217, 240, 243);
+    border-radius: 5px;
+    text-align: center;
+    border: 3px solid black;
 
 
+}
+
+.bowser-difficulty {
+    width: 30%;
+    height: 30%;
+    margin-left: 35%;
+
+
+}
+
+.h4-dif-modal {
+    font-family: "Press Start 2P", serif;
+    color: blue;
+}
+
+.btn-margin {
+    margin: 7px;
+    font-family: "Quicksand", serif;
+    width: 100px;
 }
