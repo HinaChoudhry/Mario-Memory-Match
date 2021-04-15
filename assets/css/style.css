@@ -109,25 +109,32 @@
 
    }
 
-   
+   /** Game cards and grid**/
   * {
       box-sizing: border-box;
   }
 
-.game-info-container {
+
+  .game-container { 
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+    margin: 50px auto;
+    justify-content: center;
+    perspective: 500px;
+
+  }
+  .game-info-container {
     grid-column: 1 / -1;
     display: flex;
     justify-content: space-between;
-}
-  .game-container { 
-      display:grid;
-    grid-template-columns: repeat(4, auto);
-    grid-gap: 10px;
-    margin: 50px;
-    justify-content: center;
 
   }
 
+  
+
+
+ 
 
   .game-text {
       font-size: 2vw;
@@ -136,8 +143,56 @@
   }
 
   .card {
-      background-color:white;
+      position: relative;
       height: 166px;
       width: 141px;
 
   }
+
+  .card-face {
+      position: absolute;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      backface-visibility: hidden;
+      transition: transform 500ms ease-in-out;
+    
+      
+  }
+
+.card-front {
+
+      transform: rotateY(180deg);
+  }
+
+  .ncard{
+    align-self: flex-start;
+    transition: transform 100ms ease-in-out;
+    transform: translateY(-10px);
+  }
+
+  
+  .card-back{
+    transform: rotateY(0); 
+  }
+
+  .card.hover .card-back {
+    transform: rotateY(-180deg); 
+  }
+  
+
+  .card.hover .card-front {
+    transform: rotateY(0); 
+  }
+
+  card-front:hover .card-value (
+      transform: scale(1):
+  )
+
+  card-value {
+      transform: scale(.9);
+  }
+
+  
