@@ -105,5 +105,16 @@
     font-family: "Press Start 2P", serif;
     color:rgb(217, 240, 243);
     font-size: 4vw;
+    text-align: center;
 
    }
+
+   
+  * {
+      box-sizing: border-box;
+  }
+
+  .game-text {
+      font-size: 2vw;
+      text-align: center;
+  }
