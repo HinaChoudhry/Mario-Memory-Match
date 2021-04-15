@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@300;400;500;600;700&display=swap');
 
-
+/* Landing page css */
 
 .landingbg {
     background: url("../images/landingbg.jpg");
@@ -25,6 +25,9 @@
     transform: translate(-50%, -50%);
 
 }
+
+
+/* Difficulty Modal CSS */ 
 
 .bg-modal {
     width: 100%;
@@ -73,3 +76,34 @@
     right: 14px;
     cursor: pointer;
 }
+
+
+/** Game Page CSS */
+
+.controls {
+    position: absolute;
+    left: 93%;
+    color: rgb(217, 240, 243);
+   
+    
+}
+
+.control-space {
+   padding-left: 20px;
+   }
+
+   .game-bg {
+    background: url("../images/gamebg1.jpg");
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+   }
+
+   .game-font {
+    font-family: "Press Start 2P", serif;
+    color:rgb(217, 240, 243);
+    font-size: 4vw;
+
+   }
