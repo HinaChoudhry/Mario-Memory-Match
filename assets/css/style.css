@@ -43,7 +43,7 @@ html, body{
     justify-content: center;
     align-items: center;
     display: none;
-}
+    }
 
 .modal-content {
     width: 500px;
@@ -53,6 +53,7 @@ html, body{
     text-align: center;
     border: 3px solid black;
     position: relative;
+    
 
 }
 
@@ -80,6 +81,7 @@ html, body{
     top: 0;
     right: 14px;
     cursor: pointer;
+    margin-top: 5px;
 }
 
 
@@ -208,3 +210,57 @@ html, body{
         -ms-grid-columns: auto 10px auto;
         grid-template-columns: repeat(2,auto);
     }
+  }
+
+
+    /***Victory Modal***/
+    
+
+    .victory-modal {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        .victory-content-modal {
+            width: 500px;
+            height: 400px;
+            background-color: rgb(217, 240, 243);
+            border-radius: 5px;
+            text-align: center;
+            border: 3px solid black;
+            position: relative;
+            background-color: #fed8a9;
+           
+             }
+
+        .victory-font {
+            font-family: "Press Start 2P", serif;
+            Font-size: 1.5vw;
+            color: rgb(8, 8, 175);
+
+
+        }
+
+        .victory-p {
+            font-family: "Quicksand", serif;
+            Font-size: 1.2vw;
+            font-weight: 600;
+            color: rgb(8, 8, 175);
+        }
+
+        .victory-img {
+            width:60%;
+
+        }
+
+        #victory-buttons {
+            width: 120px;
+            margin: 5px;
+            color: #fff;
+            Font-family: "Quicksand", serif;
+        }
