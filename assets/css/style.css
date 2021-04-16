@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@300;400;500;600;700&display=swap');
 
+html, body{
+    width: 100%;
+    overflow-x: hidden;
+  }
+
 /* Landing page css */
 
 .landingbg {
     background: url("../images/landingbg.jpg");
     height: 100vh;
-    width: 100gvw;
+    width: 100vw;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -81,8 +86,8 @@
 /** Game Page CSS */
 
 .controls {
-    position: absolute;
-    left: 93%;
+    position: relative;
+    background-color: #268ec3;
     color: rgb(217, 240, 243);
    
     
@@ -94,11 +99,12 @@
 
    .game-bg {
     background: url("../images/gamebg1.jpg");
-    height: auto;
-    width: auto;
+    height: 100%;
+    width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-color: #268ec3;
+    
    }
 
    .game-font {
@@ -106,6 +112,7 @@
     color:rgb(217, 240, 243);
     font-size: 4vw;
     text-align: center;
+    
 
    }
 
@@ -118,11 +125,11 @@
   .game-container { 
     display: grid;
     grid-template-columns: repeat(4, auto);
-    grid-template-rows: repeat(2, auto);
     grid-gap: 10px;
-    margin: 50px auto;
+    
     justify-content: center;
     perspective: 500px;
+    
     
 
   }
@@ -193,17 +200,11 @@
     -o-transform: rotateY(0);
  }
 
-  card-front:hover .card-value (
-      transform: scale(1):
-  )
+  
 
-  card-value {
-      transform: scale(.9);
-  }
-
+  /*** Media queries ***/
   @media (max-width:600px){
     .game-container{
         -ms-grid-columns: auto 10px auto;
         grid-template-columns: repeat(2,auto);
     }
-    
