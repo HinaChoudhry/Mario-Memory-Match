@@ -100,7 +100,7 @@ html, body{
    }
 
    .game-bg {
-    background: url("../images/gamebg1.jpg");
+    background: url("../images/gamebg.jpg");
     height: 100%;
     width: 100%;
     background-repeat: no-repeat;
@@ -127,14 +127,11 @@ html, body{
   .game-container { 
     display: grid;
     grid-template-columns: repeat(4, auto);
-    grid-gap: 10px;
-    
+    grid-gap: 20px;
     justify-content: center;
     perspective: 500px;
-    
-    
+    }
 
-  }
   .game-info-container {
     grid-column: 1 / -1;
     display: flex;
