@@ -267,4 +267,6 @@ html, body{
         }
 
 
-    
+    .hide-cards{
+        display:none
+    }
