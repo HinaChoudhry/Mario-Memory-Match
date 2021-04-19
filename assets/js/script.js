@@ -45,7 +45,16 @@ class MarioMemoryMatch {
     this.busy = true;
 
   }
+
+  /* This line of code is from PortExe Tutorial for a memory match game at https://www.youtube.com/watch?v=3uuQ3g92oPQ. 
+  It creates a boolean to see if the card clicked is not busy, is not included in this.matchedCards and is not the 
+  cardToCheck. This equals to true.  */
+  canFlipCard(card) {
+    return (!this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck)
+  }
 }
+
+
 // ready function to start the game 
 function ready() {
   let cards = Array.from(document.getElementsByClassName("card"));
@@ -60,6 +69,7 @@ cards.forEach(card => {
   });
 }
 
+// Start and stop background music
 var audio = new Audio("assets/audio/gamebg.mp3");
 
 function startAudio() {
