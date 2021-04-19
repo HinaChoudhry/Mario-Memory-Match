@@ -19,14 +19,15 @@ html, body{
 .title {
     width: 100%;
     padding-top: 5px;
-    animation: grow 1700ms ease-out;
+    animation: grow 1500ms ease-out;
 }
 
 @keyframes grow {
     0% {
         transform: scale(0);
     }
-    100% {transform: scale(1)
+    100% { 
+        transform: scale(1)
     }
 }
 

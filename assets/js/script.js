@@ -1,3 +1,19 @@
+
+// ready function to start the game 
+function ready() {
+  let cards = Array.from(document.getElementsByClassName("card"));
+
+// game.startGame()
+
+cards.forEach(card => {
+  card.addEventListener("click", () => {
+    //game.flipCard(card);
+      });
+  });
+}
+
+
+
 // Difficulty modal and close button 
 
 document.querySelector(".close-button").addEventListener("click", function() {
@@ -23,7 +39,7 @@ hard.addEventListener('click', () => game(9));
 
 let cards = Array.from(document.getElementsByClassName("card"));
 
-function game(num) {
+function gameStart(num) {
   if (num === 5) {
     cards = Array.from(document.getElementsByClassName("Easy"));
     hideLevel2();
