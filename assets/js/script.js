@@ -1,31 +1,3 @@
-// Audio settings for the game
-class AudioController {
-  constructor() {
-      this.bgMusic = new Audio("assets/audio/gamebg.mp3");
-      this.flipSound = new Audio("assets/audio/flip.wav");
-      this.matchSound = new Audio("assets/audio/match.wav");
-      this.victorySound = new Audio("assets/audio/victory.wav");
-      this.noMatch = new Audio("assets/audio/nomatch.wav");
-      this.bgMusic.volume = 0.5;
-      this.bgMusic.loop = true;
-  }
-  
-  stopMusic(){
-    this.bgMusic.pause();
-    this.bgMusic.currentTime = 0;
-  }
-  flip() {
-    this.flipSound.play();
-  }
-  match(){
-    this.matchSound.play();
-  }
-  victory(){
-    this.stopMusic();
-    this.victory.play();
-  }
-}
-
 // Game setup
 class MarioMemoryMatch {
   constructor(totalTime, cards) {
@@ -46,16 +18,16 @@ class MarioMemoryMatch {
 
   }
 }
+
+
 // ready function to start the game 
 function ready() {
   let cards = Array.from(document.getElementsByClassName("card"));
-
-   // game.startGame()
-
+ 
  
 cards.forEach(card => {
   card.addEventListener("click", () => {
-    //game.flipCard(card);
+    game.flipCard(card);
       });
   });
 }
@@ -72,6 +44,7 @@ function stopAudio (){
   audioBg.currentTime = 0;
 }
 
+// Flip FX
 
 let audioFlip = new Audio("assets/audio/flip.wav");
 
@@ -96,13 +69,13 @@ let easy = document.getElementById("selectEasy");
 let medium = document.getElementById("selectMedium");
 let hard = document.getElementById("selectHard");
 
-easy.addEventListener('click', () => game(5));
-medium.addEventListener('click', () => game(7));
-hard.addEventListener('click', () => game(9));
+easy.addEventListener('click', () => pair(5));
+medium.addEventListener('click', () => pair(7));
+hard.addEventListener('click', () => pair(9));
 
 let cards = Array.from(document.getElementsByClassName("card"));
 
-function game(num) {
+function pair(num) {
 if (num === 5) {
   cards = Array.from(document.getElementsByClassName("Easy"));
   hideLevel2();
@@ -118,7 +91,7 @@ cards = Array.from(document.getElementsByClassName("card"))};
 function hideLevel2() {
 let levelTwoCards = Array.from(document.getElementsByClassName("Medium"));
 for (var i of levelTwoCards){
-  i.classList.add("hide-cards");
+  i.classList.add("hide-cards")
 }
 }
 
@@ -128,3 +101,12 @@ for (var i of levelThreeCards){
 i.classList.add("hide-cards");
 }
 }
+
+
+
+
+// Card flip
+function flipCard() {
+  this.classList.toggle("visible");
+} cards.forEach((card) => card.addEventListener("click", flipCard));
+
