@@ -9,10 +9,7 @@ class AudioController {
       this.bgMusic.volume = 0.5;
       this.bgMusic.loop = true;
   }
-  startMusic() {
-    this.bgMusic.play();
-  }
-
+  
   stopMusic(){
     this.bgMusic.pause();
     this.bgMusic.currentTime = 0;
@@ -30,7 +27,6 @@ class AudioController {
 }
 
 // Game setup
-
 class MarioMemoryMatch {
   constructor(totalTime, cards) {
     this.cardsArray = game();
@@ -41,7 +37,6 @@ class MarioMemoryMatch {
   }
   
   // This function is called for every new game
-
   startGame(){
     this.cardToCheck = null;
     this.totalClicks = 0;
@@ -65,9 +60,18 @@ cards.forEach(card => {
   });
 }
 
+var audio = new Audio("assets/audio/gamebg.mp3");
 
+function startAudio() {
+    audio.play();
+}
+
+function stopAudio (){
+  audio.pause();
+  audio.currentTime = 0;
+}
+  
 // Difficulty modal and close button 
-
 document.querySelector(".close-button").addEventListener("click", function() {
   document.querySelector(".bg-modal").style.display = "none";
 });
@@ -80,7 +84,6 @@ btns[i].addEventListener('click', function () {
 }
 
 // Generates number of cards based on difficulty selected
-
 let easy = document.getElementById("selectEasy");
 let medium = document.getElementById("selectMedium");
 let hard = document.getElementById("selectHard");
