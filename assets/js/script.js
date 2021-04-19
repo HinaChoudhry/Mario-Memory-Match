@@ -102,9 +102,6 @@ i.classList.add("hide-cards");
 }
 }
 
-
-
-
 // Card flip
 function flipCard() {
   this.classList.toggle("visible");
