@@ -16,20 +16,19 @@
     <div class = "controls">
         <button class="btn control-space controls" onclick="stopAudio()"><i class="fa fa-volume-off fa-2x" aria-hidden="true"></i></button>
         <button class="btn control-space controls" onclick="startAudio()"><i class="fa fa-volume-up fa-2x pulse" aria-hidden="true"></i></button>
-        
-        <button class ="btn control-space controls"><i class="fa fa-refresh fa-2x" aria-hidden="true"></i></button>
+                <button class ="btn control-space controls"><i class="fa fa-refresh fa-2x" aria-hidden="true"></i></button>
     </div>
         
     <!--Time and Flips Counter-->
     <div class="game-bg game-font">Mario Memory Match<br>
-       <div class="game-container">
-           <div class="game-info-container">
+        <div class="game-container" id="container">
+        <div class="game-info-container">
         <div class="game-text">
         Time <span id="time" >00</span></div>
         <div class="game-text">
         Flips <span id="flips">0</span></div>
     </div>
-
+        
     <div class="card Easy" onclick="flipNoise()">
         <div class="card-back card-face">
             <img class ="ncard" src="assets/images/ncard.png">
@@ -173,9 +172,9 @@
          <div class="card-front card-face">
              <img class="card-value" src="assets/images/yoshi.png">
          </div>
-      </div>
-         </div>
-         </div>
+        </div>
+    </div>
+</div>
 
     <div class="bg-modal">
         <div class="modal-content">
@@ -186,7 +185,8 @@
                 <div class="button-difficulty">
                     <button type="button" id="selectEasy" class="btn btn-success btn-margin">Easy</button><br>
                     <button type="button" id="selectMedium"  class="btn btn-warning btn-margin">Medium</button><br>
-                    <button type="button" id="selectHard"  class="btn btn-danger btn-margin">Hard</button>
+                    <button type="button" id="selectHard"  class="btn btn-danger btn-margin">Hard</button><br>
+                    <button type="button" id="startGame"  class="btn btn-primary btn-margin">Start</button>
                  </div>
             </div>
     </div>

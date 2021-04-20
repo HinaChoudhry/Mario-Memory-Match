@@ -1,36 +1,16 @@
-// Game setup
-class MarioMemoryMatch {
-  constructor(totalTime, cards) {
-    this.cardsArray = game();
-    this.totaltime = totalTime;
-    this.timer = document.getElementById("time");
-    this.ticker = document.getElementbyId("flips");
-    this.audioController = new AudioController();
-  }
-  
-  // This function is called for every new game
-  startGame(){
-    this.cardToCheck = null;
-    this.totalClicks = 0;
-    this.timeRemaining = this.totalTIme;
-    this.matchedCards = [];
-    this.busy = true;
-
-  }
-}
-
-
-// ready function to start the game 
-function ready() {
-  let cards = Array.from(document.getElementsByClassName("card"));
- 
- 
-cards.forEach(card => {
-  card.addEventListener("click", () => {
-    game.flipCard(card);
-      });
+   const startGameBtn = document.querySelector("#startGame");
+   
+  startGameBtn.addEventListener("click", function() {
+    startGame(startGameBtn);
   });
+
+function startGame(el){
+ flipCard(el);
+shuffleArray(cards);
 }
+
+
+
 
 // Start and stop background music
 let audioBg = new Audio("assets/audio/gamebg.mp3");
@@ -57,12 +37,9 @@ document.querySelector(".close-button").addEventListener("click", function() {
   document.querySelector(".bg-modal").style.display = "none";
 });
 
-let btns = document.querySelectorAll(".btn-margin");
-for (var i = 0; i < btns.length; i++) {
-btns[i].addEventListener('click', function () {
+document.querySelector("#startGame").addEventListener("click", function() {
   document.querySelector(".bg-modal").style.display = "none";
-}, false);
-}
+});
 
 // Generates number of cards based on difficulty selected
 let easy = document.getElementById("selectEasy");
@@ -85,8 +62,8 @@ if (num === 5) {
   let level2 = Array.from(document.getElementsByClassName("Medium"));
   cards = level1.concat(level2);
   hideLevel3();    
-} else 
-cards = Array.from(document.getElementsByClassName("card"))};
+} else {
+cards = Array.from(document.getElementsByClassName("card"))};}
 
 function hideLevel2() {
 let levelTwoCards = Array.from(document.getElementsByClassName("Medium"));
@@ -103,7 +80,33 @@ i.classList.add("hide-cards");
 }
 
 // Card flip
-function flipCard() {
-  this.classList.toggle("visible");
-} cards.forEach((card) => card.addEventListener("click", flipCard));
+function flipCard(el) {
+  el.classList.toggle("visible");
+} 
 
+cards.forEach(card => {
+  card.addEventListener("click", () => {
+    flipCard(card);
+  })
+})
+
+
+
+
+
+//Shuffle
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    console.log(array);
+    return array;
+}
+
+
+let node = document.getElementsByClassName("card");
+let container = document.getElementById("container");
+node.appendChild(container);
+document.getElementById("container").appendChild(node);

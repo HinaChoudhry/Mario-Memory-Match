@@ -41,7 +41,6 @@ html, body{
 
 }
 
-
 /* Difficulty Modal CSS */ 
 
 .bg-modal {
@@ -57,7 +56,7 @@ html, body{
 
 .modal-content {
     width: 500px;
-    height: 300px;
+    height: 400px;
     background-color: rgb(217, 240, 243);
     border-radius: 5px;
     text-align: center;
@@ -72,7 +71,6 @@ html, body{
     height: 30%;
     margin-left: 35%;
 
-
 }
 
 .h4-dif-modal {
@@ -81,7 +79,7 @@ html, body{
 }
 
 .btn-margin {
-    margin: 7px;
+    margin: 10px;
     font-family: "Quicksand", serif;
     width: 100px;
 }
@@ -93,7 +91,6 @@ html, body{
     cursor: pointer;
     margin-top: 5px;
 }
-
 
 /** Game Page CSS */
 
@@ -145,7 +142,6 @@ animation-iteration-count: 5;
   * {
       box-sizing: border-box;
   }
-
 
   .game-container { 
     display: grid;
@@ -234,7 +230,6 @@ animation-iteration-count: 5;
     }
   }
 
-
     /***Victory Modal***/
     
 
@@ -266,7 +261,6 @@ animation-iteration-count: 5;
             Font-size: 1.5vw;
             color: rgb(8, 8, 175);
 
-
         }
 
         .victory-p {
@@ -287,7 +281,6 @@ animation-iteration-count: 5;
             color: #fff;
             Font-family: "Quicksand", serif;
         }
-
 
     .hide-cards{
         display:none
