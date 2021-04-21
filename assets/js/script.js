@@ -1,11 +1,8 @@
-   const startGameBtn = document.querySelector("#startGame");
-   
-  startGameBtn.addEventListener("click", function() {
-    startGame(startGameBtn);
-  });
+const startGameBtn = document.querySelector("#startGame");
+
 
 function startGame(el){
- flipCard(el);
+flipCard(el);
 shuffleArray(cards);
 }
 
@@ -16,12 +13,12 @@ shuffleArray(cards);
 let audioBg = new Audio("assets/audio/gamebg.mp3");
 
 function startAudio() {
-    audioBg.play();
+  audioBg.play();
 }
 
 function stopAudio (){
-  audioBg.pause();
-  audioBg.currentTime = 0;
+audioBg.pause();
+audioBg.currentTime = 0;
 }
 
 // Flip FX
@@ -29,17 +26,20 @@ function stopAudio (){
 let audioFlip = new Audio("assets/audio/flip.wav");
 
 function flipNoise() {
-  audioFlip.play();
+audioFlip.play();
 }
 
-// Difficulty modal and close button 
-document.querySelector(".close-button").addEventListener("click", function() {
-  document.querySelector(".bg-modal").style.display = "none";
+// Difficulty modal 
+document.getElementById("button").addEventListener("click",
+    function () {console.log("test")
+        document.querySelector(".bg-modal").style.display = "flex";
+    });
+
+document.querySelector(".close-button").addEventListener("click", function () {
+    document.querySelector(".bg-modal").style.display = "none";
 });
 
-document.querySelector("#startGame").addEventListener("click", function() {
-  document.querySelector(".bg-modal").style.display = "none";
-});
+
 
 // Generates number of cards based on difficulty selected
 let easy = document.getElementById("selectEasy");
@@ -54,21 +54,21 @@ let cards = Array.from(document.getElementsByClassName("card"));
 
 function pair(num) {
 if (num === 5) {
-  cards = Array.from(document.getElementsByClassName("Easy"));
-  hideLevel2();
-  hideLevel3(); 
+cards = Array.from(document.getElementsByClassName("Easy"));
+hideLevel2();
+hideLevel3(); 
 } else if (num === 7) {
-  let level1 = Array.from(document.getElementsByClassName("Easy"));
-  let level2 = Array.from(document.getElementsByClassName("Medium"));
-  cards = level1.concat(level2);
-  hideLevel3();    
+let level1 = Array.from(document.getElementsByClassName("Easy"));
+let level2 = Array.from(document.getElementsByClassName("Medium"));
+cards = level1.concat(level2);
+hideLevel3();    
 } else {
 cards = Array.from(document.getElementsByClassName("card"))};}
 
 function hideLevel2() {
 let levelTwoCards = Array.from(document.getElementsByClassName("Medium"));
 for (var i of levelTwoCards){
-  i.classList.add("hide-cards")
+i.classList.add("hide-cards")
 }
 }
 
@@ -81,13 +81,13 @@ i.classList.add("hide-cards");
 
 // Card flip
 function flipCard(el) {
-  el.classList.toggle("visible");
+el.classList.toggle("visible");
 } 
 
 cards.forEach(card => {
-  card.addEventListener("click", () => {
-    flipCard(card);
-  })
+card.addEventListener("click", () => {
+  flipCard(card);
+})
 })
 
 
@@ -97,16 +97,10 @@ cards.forEach(card => {
 //Shuffle
 
 function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    console.log(array);
-    return array;
+  for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+  }
+  console.log(array);
+  return array;
 }
-
-
-let node = document.getElementsByClassName("card");
-let container = document.getElementById("container");
-node.appendChild(container);
-document.getElementById("container").appendChild(node);

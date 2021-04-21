@@ -21,6 +21,17 @@
         
     <!--Time and Flips Counter-->
     <div class="game-bg game-font">Mario Memory Match<br>
+        <div class="overlay-text visible">
+            Click to Start
+          </div>
+          <div id="game-over-text" class="overlay-text">
+            GAME OVER
+            <span class="overlay-text-small">Click to Restart</span>
+          </div>
+          <div id="victory-text" class="overlay-text">
+            VICTORY
+            <span class="overlay-text-small">Click to Restart</span>
+          </div>
         <div class="game-container" id="container">
         <div class="game-info-container">
         <div class="game-text">
@@ -176,20 +187,8 @@
     </div>
 </div>
 
-    <div class="bg-modal">
-        <div class="modal-content">
-            <div class="close-button"><i class="fa fa-times fa-lg" aria-hidden="true"></i></div>
-            <img class="bowser-difficulty" src="https://i.imgur.com/IqWQYik.gif" alt="bowser">
-                <div class="h4-dif-modal">Choose your difficulty level
-                </div>
-                <div class="button-difficulty">
-                    <button type="button" id="selectEasy" class="btn btn-success btn-margin">Easy</button><br>
-                    <button type="button" id="selectMedium"  class="btn btn-warning btn-margin">Medium</button><br>
-                    <button type="button" id="selectHard"  class="btn btn-danger btn-margin">Hard</button><br>
-                    <button type="button" id="startGame"  class="btn btn-primary btn-margin">Start</button>
-                 </div>
-            </div>
-    </div>
+
+
 
     
 <!--Victory Modal-->

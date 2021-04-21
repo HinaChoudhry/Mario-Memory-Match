@@ -51,18 +51,17 @@ html, body{
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    }
+    display: none;
+}
 
 .modal-content {
     width: 500px;
-    height: 400px;
+    height: 300px;
     background-color: rgb(217, 240, 243);
     border-radius: 5px;
     text-align: center;
     border: 3px solid black;
     position: relative;
-     
 
 }
 
@@ -149,6 +148,7 @@ animation-iteration-count: 5;
     grid-gap: 20px;
     justify-content: center;
     perspective: 500px;
+    
     }
 
   .game-info-container {
@@ -162,7 +162,7 @@ animation-iteration-count: 5;
   .game-text {
       font-size: 2vw;
       text-align: center;
-   
+    margin: 20px;
   }
 
   .card {
@@ -171,7 +171,7 @@ animation-iteration-count: 5;
       width: 141px;
       background-color: unset;
       border: unset;
-
+    
   }
 
   .card-face {
@@ -183,7 +183,7 @@ animation-iteration-count: 5;
       align-items: center;
       backface-visibility: hidden;
       transition: transform 500ms ease-in-out;
-    
+    z-index: 0;
       
   }
 
@@ -285,3 +285,31 @@ animation-iteration-count: 5;
     .hide-cards{
         display:none
     }
+
+
+    /**Overlays**/
+
+    .overlay-text {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0.5;
+        display: none;
+        position: fixed;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: #FF6D00;
+        font-family: Creepy, serif;
+        transition: background-color 500ms, font-size 500ms;
+      }
+      
+      .overlay-text-small {
+        font-size: .3em;
+      }
+      
+      .overlay-text.visible {
+        display: flex;
+        animation: overlay-grow 500ms forwards;
+      }
