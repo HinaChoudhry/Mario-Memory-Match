@@ -21,6 +21,28 @@ class AudioController {
   }
 }
 
+class MarioMemoryMatch {
+  constructor (totalTime, cards) {
+    this.cardsArray = pair();
+    this.totalTime = totalTime;
+    this.timeRemaining = totalTime;
+    this.timer = document.getElementById("time-remaining");
+    this.ticker = document.getElementById("flips");
+    this.audioController = new AudioController();
+  }
+  startGame() {
+    this.cardToCheck = null;
+    this.totalClicks = 0;
+    this.timeRemaining = this.totalTime;
+    this.matchedCards = [];
+    this.busy = true;
+  }
+/**  This returns a boolean of true if busy is false and if matched cards doesn't include card, and card doesn't equal 
+    cardToCheck, so that a card can be flipped.*/
+  canFlipCard(card) {
+    return (!this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck)
+  }
+}
 
 
 function ready() {
