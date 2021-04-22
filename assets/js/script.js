@@ -1,3 +1,5 @@
+let cards = Array.from(document.getElementsByClassName("card"));
+
 class AudioController {
   constructor () {
     this.flipSound = new Audio("assets/audio/flip.wav");
@@ -37,10 +39,23 @@ class MarioMemoryMatch {
     this.matchedCards = [];
     this.busy = true;
   }
+
+  flipCard(card) {
+    if (this.canFlipCard(card)) {
+      this.audioController.flip();
+      this.totalClicks ++;
+      this.ticker.innerText = this.totalClicks;
+      card.classList.add("visible");
+
+
+    }
+  }
+
 /**  This returns a boolean of true if busy is false and if matched cards doesn't include card, and card doesn't equal 
     cardToCheck, so that a card can be flipped.*/
   canFlipCard(card) {
-    return (!this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck)
+    return true;
+    // return (!this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck)
   }
 }
 
@@ -48,16 +63,17 @@ class MarioMemoryMatch {
 function ready() {
   let overlays = Array.from(document.getElementsByClassName("overlay-text"));
   let cards = Array.from(document.getElementsByClassName("card"));
+  let game = new MarioMemoryMatch (100, cards);
 
   overlays.forEach(overlay => {
     overlay.addEventListener("click", () => {
       overlay.classList.remove("visible");
-      //game.startGame()
+      game.startGame();
     });
   });
   cards.forEach(card => {
     card.addEventListener("click", () => {
-      // game.flipCard(card);
+      game.flipCard(card);
     });
   });
 }
@@ -82,7 +98,7 @@ function stopAudio() {
 
 //Generating the different number of cards per difficulty
 
-let cards = Array.from(document.getElementsByClassName("card"));
+
 
 function pair(difficulty) {
   if (difficulty == 5) {

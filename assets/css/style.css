@@ -105,6 +105,7 @@ html, body{
    animation: pulse 1000ms ease-out;
 animation-duration: 1000ms;
 animation-iteration-count: 5;
+
 }
 @keyframes pulse {
     0% {
@@ -253,7 +254,6 @@ animation-iteration-count: 5;
         .victory-content-modal {
             width: 500px;
             height: 400px;
-            background-color: rgb(217, 240, 243);
             border-radius: 5px;
             text-align: center;
             border: 3px solid black;
