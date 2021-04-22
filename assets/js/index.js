@@ -1,14 +1,14 @@
 // Difficulty modal 
 document.getElementById("button").addEventListener("click", function () {
-    document.querySelector(".bg-modal").style.display = "flex";
-  });
-  
-  document.querySelector(".close-button").addEventListener("click", function () {
-    document.querySelector(".bg-modal").style.display = "none";
-  });
-  
+  document.querySelector(".bg-modal").style.display = "flex";
+});
 
-  // Generates number of cards based on difficulty selected
+document.querySelector(".close-button").addEventListener("click", function () {
+  document.querySelector(".bg-modal").style.display = "none";
+});
+
+
+// Generates number of cards based on difficulty selected
 let easy = document.getElementById("selectEasy");
 let medium = document.getElementById("selectMedium");
 let hard = document.getElementById("selectHard");

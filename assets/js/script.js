@@ -31,16 +31,16 @@ function flipNoise() {
 
 
 
-
+//Generating the different number of cards per difficulty
 
 let cards = Array.from(document.getElementsByClassName("card"));
 
 function pair(difficulty) {
-  if (difficulty === 5) {
+  if (difficulty == 5) {
     cards = Array.from(document.getElementsByClassName("Easy"));
     hideLevel2();
     hideLevel3();
-  } else if (num === 7) {
+  } else if (difficulty == 7) {
     let level1 = Array.from(document.getElementsByClassName("Easy"));
     let level2 = Array.from(document.getElementsByClassName("Medium"));
     cards = level1.concat(level2);
@@ -99,3 +99,5 @@ const urlParams = new URLSearchParams(queryString);
 const difficulty = urlParams.get('difficulty');
 
 console.log(difficulty);
+
+pair(difficulty);
