@@ -1,3 +1,51 @@
+class AudioController {
+  constructor () {
+    this.flipSound = new Audio("assets/audio/flip.wav");
+    this.matchSound = new Audio("assets/audio/match.wav");
+    this.noMatchSound = new Audio("assets/audio/nomatch.wav");
+    this.victorySound= new Audio("assets/audio/victory.wav");
+    this.gameOverSound = new Audio("assets/audio/gameover.wav");
+  }
+  flip() {
+    this.flipSound.play();
+  
+  }
+  match() {
+    this.matchSound.play();
+  }
+  victory() {
+    this.victorySound.play();
+  }
+  gameOver() {
+    this.gameOverSound.play();
+  }
+}
+
+
+
+function ready() {
+  let overlays = Array.from(document.getElementsByClassName("overlay-text"));
+  let cards = Array.from(document.getElementsByClassName("card"));
+
+  overlays.forEach(overlay => {
+    overlay.addEventListener("click", () => {
+      overlay.classList.remove("visible");
+      //game.startGame()
+    });
+  });
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      // game.flipCard(card);
+    });
+  });
+}
+
+let audioController = new AudioController();
+
+
+document.addEventListener("DOMContentLoaded", ready());
+
+
 // Start and stop background music
 let audioBg = new Audio("assets/audio/gamebg.mp3");
 
