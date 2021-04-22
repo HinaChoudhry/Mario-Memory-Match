@@ -162,7 +162,7 @@ animation-iteration-count: 5;
   .game-text {
       font-size: 2vw;
       text-align: center;
-    margin: 20px;
+    margin: 10px;
   }
 
   .card {
@@ -228,6 +228,11 @@ animation-iteration-count: 5;
         -ms-grid-columns: auto 10px auto;
         grid-template-columns: repeat(2,auto);
     }
+
+    .game-info-container {
+        flex-direction: column;
+        align-items: center;
+    }
   }
 
     /***Victory Modal***/
@@ -253,7 +258,7 @@ animation-iteration-count: 5;
             border: 3px solid black;
             position: relative;
             background-color: #fed8a9;
-           
+          
              }
 
         .victory-font {
@@ -294,15 +299,26 @@ animation-iteration-count: 5;
         left: 0;
         right: 0;
         bottom: 0;
-        z-index: 0.5;
+        z-index: 1;
         display: none;
         position: fixed;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        color: #FF6D00;
-        font-family: Creepy, serif;
+        color: rgb(163, 161, 243);
+        font-family: "Quicksand", serif;
         transition: background-color 500ms, font-size 500ms;
+    }
+
+      @keyframes overlay-grow {
+        from {
+          background-color: rgba(0, 0, 0, 0);
+          font-size: 0;
+        }
+        to {
+          background-color: rgba(0, 0, 0, .8);
+          font-size: 2.5em;
+        }
       }
       
       .overlay-text-small {
@@ -311,5 +327,6 @@ animation-iteration-count: 5;
       
       .overlay-text.visible {
         display: flex;
+        flex-direction: column;
         animation: overlay-grow 500ms forwards;
       }

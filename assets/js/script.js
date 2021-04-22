@@ -1,14 +1,3 @@
-const startGameBtn = document.querySelector("#startGame");
-
-
-function startGame(el) {
-  flipCard(el);
-  shuffleArray(cards);
-}
-
-
-
-
 // Start and stop background music
 let audioBg = new Audio("assets/audio/gamebg.mp3");
 
@@ -20,16 +9,6 @@ function stopAudio() {
   audioBg.pause();
   audioBg.currentTime = 0;
 }
-
-// Flip FX
-
-let audioFlip = new Audio("assets/audio/flip.wav");
-
-function flipNoise() {
-  audioFlip.play();
-}
-
-
 
 //Generating the different number of cards per difficulty
 
@@ -62,32 +41,6 @@ function hideLevel3() {
   for (var i of levelThreeCards) {
     i.classList.add("hide-cards");
   }
-}
-
-// Card flip
-function flipCard(el) {
-  el.classList.toggle("visible");
-}
-
-cards.forEach(card => {
-  card.addEventListener("click", () => {
-    flipCard(card);
-  })
-})
-
-
-
-
-
-//Shuffle
-
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  console.log(array);
-  return array;
 }
 
 //Passing variables 
