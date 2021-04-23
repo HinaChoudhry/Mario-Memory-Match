@@ -25,7 +25,7 @@ class AudioController {
 
 class MarioMemoryMatch {
   constructor (totalTime, cards) {
-    this.cardsArray = pair();
+    this.cardsArray = cards;
     this.totalTime = totalTime;
     this.timeRemaining = totalTime;
     this.timer = document.getElementById("time-remaining");
@@ -38,6 +38,7 @@ class MarioMemoryMatch {
     this.timeRemaining = this.totalTime;
     this.matchedCards = [];
     this.busy = true;
+    this.shuffleCards();
   }
 
   flipCard(card) {
@@ -50,6 +51,14 @@ class MarioMemoryMatch {
 
     }
   }
+
+  shuffleCards() { 
+    for (let i = this.cardsArray.length - 1; i > 0; i--) {
+        let randomIndex = Math.floor(Math.random() * (i + 1));
+        this.cardsArray[randomIndex].style.order = i;
+        this.cardsArray[i].style.order = randomIndex; 
+    }
+}
 
 /**  This returns a boolean of true if busy is false and if matched cards doesn't include card, and card doesn't equal 
     cardToCheck, so that a card can be flipped.*/
