@@ -63,7 +63,51 @@ this.ticker.innerText = this.totalClicks;
       this.totalClicks ++;
       this.ticker.innerText = this.totalClicks;
       card.classList.add("visible");
+
+      if (this.cardToCheck) 
+      this.checkForCardMatch(card);
+        else
+        this.cardToCheck = card;
+  
     }
+
+    }
+
+    checkForCardMatch(card) {
+     if (this.getCardType(card) === this.getCardType(this.cardToCheck))
+     this.cardMatch(card, this.cardToCheck);
+     else 
+     this.cardMisMatch(card, this.cardToCheck);
+
+     this.cardToCheck = null;
+    }
+
+cardMatch(card1, card2) {
+  this.matchedCards.push(card1);
+  this.matchedCards.push(card2);
+  card1.classList.add("matched");
+  card2.classList.add("matched");
+  this.audioController.match();
+  if (this.matchedCards.length === this.cardsArray.length)
+  this.victory();
+
+}
+
+cardMisMatch(card1, card2) {
+  this.busy = true; 
+  setTimeout(() => {
+    card1.classList.remove("visible");
+    card2.classList.remove("visible");
+    this.busy = false;
+    
+  }, 1000);
+}
+  
+
+
+
+getCardType(card) {
+      return card.getElementsByClassName("card-value")[0].src;
 
     }
     startCountDown() {
@@ -101,8 +145,8 @@ this.ticker.innerText = this.totalClicks;
 /**  This returns a boolean of true if busy is false and if matched cards doesn't include card, and card doesn't equal 
     cardToCheck, so that a card can be flipped.*/
   canFlipCard(card) {
-    return true;
-    // return (!this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck)
+    
+    return (!this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck)
   }
 }
 
