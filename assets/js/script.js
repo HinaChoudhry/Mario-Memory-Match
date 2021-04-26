@@ -24,7 +24,7 @@ class AudioController {
     this.matchSound.play();
   }
   victory() {
-   this.stopMusic();
+   
     this.victorySound.play();
   }
   gameOver() {
