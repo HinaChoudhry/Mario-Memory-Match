@@ -1,13 +1,21 @@
 let cards = Array.from(document.getElementsByClassName("card"));
+let matchedCards = [];
+let cardsArray = cards;
+const cardCount = {5: 10, 7: 14, 9: 18}
+
 
 class AudioController {
   constructor () {
     this.flipSound = new Audio("assets/audio/flip.wav");
     this.matchSound = new Audio("assets/audio/match.wav");
-    this.noMatchSound = new Audio("assets/audio/nomatch.wav");
     this.victorySound= new Audio("assets/audio/victory.wav");
     this.gameOverSound = new Audio("assets/audio/gameover.wav");
   }
+
+  stopMusic() {
+    this.bgMusic.pause();
+    this.bgMusic.currentTime = 0;
+}
   flip() {
     this.flipSound.play();
   
@@ -16,16 +24,18 @@ class AudioController {
     this.matchSound.play();
   }
   victory() {
+   this.stopMusic();
     this.victorySound.play();
   }
   gameOver() {
+    this.stopMusic();
     this.gameOverSound.play();
   }
 }
 
 class MarioMemoryMatch {
   constructor (totalTime, cards) {
-    this.cardsArray = cards;
+   
     this.totalTime = totalTime;
     this.timeRemaining = totalTime;
     this.timer = document.getElementById("time-remaining");
@@ -36,22 +46,22 @@ class MarioMemoryMatch {
     this.cardToCheck = null;
     this.totalClicks = 0;
     this.timeRemaining = this.totalTime;
-    this.matchedCards = [];
+    
     this.busy = true;
     setTimeout(() => {
       this.shuffleCards();
       this.countDown = this.startCountDown();
       this.busy = false;
-    }, 500);
-this.hideCards();
-this.timer.innerText = this.timeRemaining;
-this.ticker.innerText = this.totalClicks;
+      }, 500);
+      this.hideCards();
+        this.timer.innerText = this.timeRemaining;
+      this.ticker.innerText = this.totalClicks;
 
 
-  }
+ } 
 
   hideCards() {
-    this.cardsArray.forEach(card => {
+    cardsArray.forEach(card => {
       card.classList.remove("visible");
       card.classList.remove("matched");
     });
@@ -72,44 +82,43 @@ this.ticker.innerText = this.totalClicks;
     }
 
     }
-
-    checkForCardMatch(card) {
-     if (this.getCardType(card) === this.getCardType(this.cardToCheck))
-     this.cardMatch(card, this.cardToCheck);
-     else 
-     this.cardMisMatch(card, this.cardToCheck);
-
-     this.cardToCheck = null;
-    }
-
-cardMatch(card1, card2) {
-  this.matchedCards.push(card1);
-  this.matchedCards.push(card2);
-  card1.classList.add("matched");
-  card2.classList.add("matched");
-  this.audioController.match();
-  if (this.matchedCards.length === this.cardsArray.length)
-  this.victory();
-
-}
-
-cardMisMatch(card1, card2) {
-  this.busy = true; 
-  setTimeout(() => {
-    card1.classList.remove("visible");
-    card2.classList.remove("visible");
-    this.busy = false;
     
-  }, 1000);
-}
+    checkForCardMatch(card) {
+      if (this.getCardType(card) === this.getCardType(this.cardToCheck))
+      this.cardMatch(card, this.cardToCheck);
+      else 
+      this.cardMisMatch(card, this.cardToCheck);
+ 
+      this.cardToCheck = null;
+     }
+ 
+
+     cardMatch(card1, card2) {
+      matchedCards.push(card1); 
+      matchedCards.push(card2);
+      card1.classList.add("matched");
+      card2.classList.add("matched");
+      this.audioController.match();
+      console.log(difficulty);
+      console.log(matchedCards.length);
+      if (matchedCards.length === cardCount[difficulty]) {
+      this.victory();}
+  }
   
-
-
-
-getCardType(card) {
+    cardMisMatch(card1, card2) {
+      this.busy = true; 
+      setTimeout(() => {
+        card1.classList.remove("visible");
+        card2.classList.remove("visible");
+        this.busy = false;
+      }, 1000);
+    }
+      
+    getCardType(card) {
       return card.getElementsByClassName("card-value")[0].src;
 
     }
+    
     startCountDown() {
       return setInterval(() => {
         this.timeRemaining--;
@@ -130,23 +139,23 @@ getCardType(card) {
       clearInterval(this.countDown);
       this.audioController.victory();
       document.getElementById("victory-text").classList.add("visible");
-    }
+      
+  }
   
 
 
   shuffleCards() { 
-    for (let i = this.cardsArray.length - 1; i > 0; i--) {
+    for (let i = cardsArray.length - 1; i > 0; i--) {
         let randomIndex = Math.floor(Math.random() * (i + 1));
-        this.cardsArray[randomIndex].style.order = i;
-        this.cardsArray[i].style.order = randomIndex; 
+        cardsArray[randomIndex].style.order = i;
+        cardsArray[i].style.order = randomIndex; 
     }
 }
 
 /**  This returns a boolean of true if busy is false and if matched cards doesn't include card, and card doesn't equal 
     cardToCheck, so that a card can be flipped.*/
   canFlipCard(card) {
-    
-    return (!this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck)
+    return !this.busy && !matchedCards.includes(card) && card !== this.cardToCheck
   }
 }
 
@@ -231,3 +240,4 @@ const difficulty = urlParams.get('difficulty');
 console.log(difficulty);
 
 pair(difficulty);
+
