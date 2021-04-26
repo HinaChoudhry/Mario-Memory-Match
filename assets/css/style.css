@@ -331,3 +331,51 @@ animation-iteration-count: 5;
         flex-direction: column;
         animation: overlay-grow 500ms forwards;
       }
+
+
+
+      /*** Game over modal ***/
+
+      .game-over-modal {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        display:none;
+        }
+
+        .game-over-content-modal {
+            width: 500px;
+            height: 450px;
+            border-radius: 5px;
+            text-align: center;
+            border: 3px solid black;
+            position: relative;
+            background-color: #c2bcb5;
+          
+             }
+
+        .go-font {
+            font-family: "Press Start 2P", serif;
+            Font-size: 1.5vw;
+            color: rgb(65, 65, 122);
+
+        }
+
+      
+
+        .game-over-img {
+            width:50%;
+
+        }
+
+        #go-buttons {
+            width: 120px;
+            margin: 5px;
+            color: #fff;
+            Font-family: "Quicksand", serif;
+        }

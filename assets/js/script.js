@@ -28,7 +28,6 @@ class AudioController {
     this.victorySound.play();
   }
   gameOver() {
-    this.stopMusic();
     this.gameOverSound.play();
   }
 }
@@ -132,7 +131,8 @@ class MarioMemoryMatch {
     gameOver(){
       clearInterval(this.countDown);
       this.audioController.gameOver();
-      document.getElementById("game-over-text").classList.add("visible");
+      document.getElementById("game-over").classList.add("visible");
+      console.log("game over")
     }
 
     victory() {
