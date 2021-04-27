@@ -2,7 +2,7 @@
 
 My project is for a Super Mario themed memory match card game. The game takes inspiration from the mini-game in the video game Super Mario Bros 3 which has a memory match card game, where the player has to match up pairs of cards in order to win. 
 The website contains a homepage, game page as well as modals to select level difficulty from, a victory modal and a game over modal. The website is interactive, using HTML, CSS and JavaScript with libraries and frameworks such as Bootstrap. The aim of the website is to attract players of all ages who can choose their difficulty level according to preference and provide easy navigation for the users.
-[Mario Memory Match] (https://hinachoudhry.github.io/Mario-Memory-Match/)
+[Mario Memory Match](https://hinachoudhry.github.io/Mario-Memory-Match/)
 
 ## UX
 
@@ -63,7 +63,7 @@ The difficulty modal enables the user to select which difficulty level they woul
 ### Game page
 The game page contains two different areas. There is the game play area where the cards are generated based on difficulty chosen and at the top of the page, there are also small buttons to reset the game and to turn the background music on and off. The background image for the game is Super Mario themed again, to really give a feel of a retro Super Mario Game. 
 ### Playing Cards  
-	The playing cards are loaded after the user selects their difficulty level from the index.html. This loads a number of cards that can be flipped over to reveal an image, which then needs to be matched up with an identical pair. Once the pair is matched, the cards remained flipped, leaving the rest of the cards face down so that the user can guess which of the remained cards have pairs. 
+The playing cards are loaded after the user selects their difficulty level from the index.html. This loads a number of cards that can be flipped over to reveal an image, which then needs to be matched up with an identical pair. Once the pair is matched, the cards remained flipped, leaving the rest of the cards face down so that the user can guess which of the remained cards have pairs. 
 ### Victory Modal
 This modal appears when the user completes the game by matching all the cards. It tells the user how much time and how many flips it took them to complete the game. It also gives the option to replay the game, or the next level, and has a gif of 4 Super Mario heroes waving at the user. 
 ### Game Over Modal
@@ -75,16 +75,16 @@ I would like to implement a leader board system that records users scores and sh
 ## Technologies Used
 - [HTML](https://en.wikipedia.org/wiki/HTML) To enable the basic building on the website.
 - [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) for styling the website and the CSS grid system was used for the cards layout and responsiveness.
-- [JavaScript] (https://www.javascript.com/) for the interactivity of the website. 
+- [JavaScript] https://www.javascript.com/) for the interactivity of the website. 
 - [Bootstrap](https://getbootstrap.com/) For the buttons.
-- [GitHub](https://github.com/ A remote location and where I can publish my website to host.
+- [GitHub](https://github.com/) A remote location and where I can publish my website to host.
 - [Gitpod](https://www.gitpod.io/) My preferred IDE for building the website.
 - [GIT](https://git-scm.com/) for version control.
 - [Google Fonts](https://fonts.google.com/)   to choose and use different fonts for the website.
 - [Font Awesome](https://fontawesome.com/)   For different icon elements used.
 - [jQuery](https://jquery.com/) and [Popper.js](https://popper.js.org/) To use alongside Bootstrap.
 ## Testing
-Testing information can be found at TESTING.md
+Testing information can be found at [TESTING.md](https://github.com/HinaChoudhry/Mario-Memory-Match/blob/master/TESTING.md)
 ## Deployment
 - To deploy the GitHub repository to GitHub pages the following steps were done
 - Select Settings at the top of the page.
