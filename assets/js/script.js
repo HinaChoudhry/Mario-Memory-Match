@@ -132,16 +132,24 @@ class MarioMemoryMatch {
       clearInterval(this.countDown);
       this.audioController.gameOver();
       document.getElementById("game-over").classList.add("visible");
-      console.log("game over")
+      
     }
 
     victory() {
       clearInterval(this.countDown);
       this.audioController.victory();
       document.getElementById("victory-text").classList.add("visible");
+      this.stats();
+      
       
   }
   
+  stats() {
+    let timeLeft = parseInt(document.getElementById("time-remaining").innerHTML);
+    let totalTime = 100 - timeLeft;
+    let flipCount = parseInt(document.getElementById("flips").innerHTML);
+    document.getElementById("victory-p").innerHTML = `You took ${totalTime} seconds and ${flipCount} flips!`;
+  }
 
 
   shuffleCards() { 
@@ -163,6 +171,7 @@ class MarioMemoryMatch {
 function ready() {
   let overlays = Array.from(document.getElementsByClassName("overlay-text"));
   let cards = Array.from(document.getElementsByClassName("card"));
+  let retry = document.getElementById("retry-btn");
   let game = new MarioMemoryMatch (100, cards);
 
   overlays.forEach(overlay => {
@@ -171,6 +180,8 @@ function ready() {
       game.startGame();
     });
   });
+
+
   cards.forEach(card => {
     card.addEventListener("click", () => {
       game.flipCard(card);

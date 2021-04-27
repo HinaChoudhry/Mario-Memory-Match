@@ -349,8 +349,8 @@ animation-iteration-count: 5;
         }
 
         .game-over-content-modal {
-            width: 500px;
-            height: 450px;
+            width: 450px;
+            height: 400px;
             border-radius: 5px;
             text-align: center;
             border: 3px solid black;
@@ -375,7 +375,7 @@ animation-iteration-count: 5;
 
         #go-buttons {
             width: 120px;
-            margin: 5px;
+            
             color: #fff;
             Font-family: "Quicksand", serif;
         }
