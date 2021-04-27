@@ -31,7 +31,7 @@ html, body{
     }
 }
 
-#button {
+.buttons {
     font-family: "Press Start 2P", serif;
     position: absolute;
     top: 95%;
@@ -39,6 +39,10 @@ html, body{
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 
+}
+
+#button {
+    font-size: 1.5vw;
 }
 
 /* Difficulty Modal CSS */ 
