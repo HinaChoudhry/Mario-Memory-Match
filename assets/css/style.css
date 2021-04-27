@@ -373,7 +373,7 @@ animation-iteration-count: 5;
 
         }
 
-        #go-buttons {
+        .go-buttons {
             width: 120px;
             
             color: #fff;

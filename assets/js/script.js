@@ -3,7 +3,6 @@ let matchedCards = [];
 let cardsArray = cards;
 const cardCount = {5: 10, 7: 14, 9: 18}
 
-
 class AudioController {
   constructor () {
     this.flipSound = new Audio("assets/audio/flip.wav");
@@ -55,7 +54,6 @@ class MarioMemoryMatch {
       this.hideCards();
         this.timer.innerText = this.timeRemaining;
       this.ticker.innerText = this.totalClicks;
-
 
  } 
 
@@ -140,8 +138,7 @@ class MarioMemoryMatch {
       this.audioController.victory();
       document.getElementById("victory-text").classList.add("visible");
       this.stats();
-      
-      
+            
   }
   
   stats() {
@@ -150,7 +147,6 @@ class MarioMemoryMatch {
     let flipCount = parseInt(document.getElementById("flips").innerHTML);
     document.getElementById("victory-p").innerHTML = `You took ${totalTime} seconds and ${flipCount} flips!`;
   }
-
 
   shuffleCards() { 
     for (let i = cardsArray.length - 1; i > 0; i--) {
@@ -167,7 +163,6 @@ class MarioMemoryMatch {
   }
 }
 
-
 function ready() {
   let overlays = Array.from(document.getElementsByClassName("overlay-text"));
   let cards = Array.from(document.getElementsByClassName("card"));
@@ -181,7 +176,6 @@ function ready() {
     });
   });
 
-
   cards.forEach(card => {
     card.addEventListener("click", () => {
       game.flipCard(card);
@@ -191,9 +185,7 @@ function ready() {
 
 let audioController = new AudioController();
 
-
 document.addEventListener("DOMContentLoaded", ready());
-
 
 // Start and stop background music
 let audioBg = new Audio("assets/audio/gamebg.mp3");
@@ -208,7 +200,6 @@ function stopAudio() {
 }
 
 //Generating the different number of cards per difficulty
-
 
 
 function pair(difficulty) {
