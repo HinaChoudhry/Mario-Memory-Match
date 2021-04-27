@@ -1,10 +1,21 @@
 // Difficulty modal 
-document.getElementById("button").addEventListener("click", function () {
+document.getElementById("game-button").addEventListener("click", function () {
   document.querySelector(".bg-modal").style.display = "flex";
 });
 
-document.querySelector(".close-button").addEventListener("click", function () {
+document.querySelector(".click-close1").addEventListener("click", function () {
   document.querySelector(".bg-modal").style.display = "none";
+});
+
+
+// Tutorial modal
+
+document.getElementById("tutorial-button").addEventListener("click", function () {
+  document.querySelector(".tutorial-modal").style.display = "flex";
+});
+
+document.querySelector(".click-close2").addEventListener("click", function () {
+  document.querySelector(".tutorial-modal").style.display = "none";
 });
 
 

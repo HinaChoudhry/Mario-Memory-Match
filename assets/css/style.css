@@ -95,6 +95,54 @@ html, body{
     margin-top: 5px;
 }
 
+
+
+
+
+/***Tutorial Modal ****/
+
+.tutorial-modal {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+   
+}
+
+.tutorial-modal-content {
+    width: 500px;
+    height: 385px;
+    background-color: rgb(217, 240, 243);
+    border-radius: 5px;
+    text-align: center;
+    border: 3px solid black;
+    position: relative;
+
+}
+
+
+.tut-head {
+    Font-family: "Press Start 2P", serif;
+    Font-size: 1.2em;
+    color: rgb(24, 24, 206);
+
+}
+
+.princess-peach {
+    height: 50%;
+}
+
+.tut-p {
+    Font-family: "Quicksand", serif;
+    Font-size: 1em;
+    color: rgb(24, 24, 206);
+    Font-weight: 600;
+}
+
 /** Game Page CSS */
 
 .controls {
