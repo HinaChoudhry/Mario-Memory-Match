@@ -188,25 +188,26 @@
 <!--Victory Modal-->
 <div class="overlay-text victory-modal"  id="victory-text">
     <div class="victory-content-modal ">
-        <div class="close-button"><i class="fa fa-times fa-lg" aria-hidden="true"></i></div>
         <img src="https://i.imgur.com/cbQSAjA.gif" class="victory-img" alt="victory">
         <p class="victory-font">Victory!</p>
         <p class="victory-p" id="victory-p">You took (time) and (flips)!</p>
-        <div class="button-difficulty">
-            <button type="button" class="btn btn-primary" id="victory-buttons" class="a-font" onclick="reload()">Retry?</a></button><br>
+        <button type="button" class="btn btn-primary" id="victory-buttons" class="a-font" onclick="reload()">Retry?</a></button><br>
             <button type="button" class="btn btn-warning" id="victory-buttons">Next Level?</button><br>
             <button type="button" class="btn btn-success" id="victory-buttons"><a href="index.html" class="a-font">Home</a></button>
+            <p class="victory-p">Change difficulty?</p>
+            <button type="button" id="selectEasy" class="btn btn-success btn-margin"> <a href="game.html?difficulty=5" class="a-font">Easy</a></button>
+            <button type="button" id="selectMedium"  class="btn btn-warning btn-margin"><a href="game.html?difficulty=7" class="a-font">Medium</a></button>
+            <button type="button" id="selectHard"  class="btn btn-danger btn-margin"><a href="game.html?difficulty=9" class="a-font">Hard</a></button>
          </div>
     </div>
-</div>
+
 
 
 
 <!-- Game over modal -->
 
 <div class="overlay-text game-over-modal" id="game-over" >
-   
-        <img src="https://i.imgur.com/xfqQ3OB.gif" class="game-over-img" alt="game-over-boo">
+   <img src="https://i.imgur.com/xfqQ3OB.gif" class="game-over-img" alt="game-over-boo">
         <p class="go-font">GAME OVER</p>
         <div class="button-difficulty">
             <button type="button" class="btn btn-secondary go-buttons" >Retry?</a></button><br>

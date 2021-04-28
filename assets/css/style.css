@@ -59,8 +59,8 @@ html, body{
 }
 
 .modal-content {
-    width: 500px;
-    height: 300px;
+    width: auto;
+    height: auto;
     background-color: rgb(217, 240, 243);
     border-radius: 5px;
     text-align: center;
@@ -319,6 +319,9 @@ animation-iteration-count: 5;
 
     /***Victory Modal***/
     
+    p {
+        margin-bottom: 0px;
+    }
 
     .victory-modal {
         width: 100%;
@@ -333,8 +336,8 @@ animation-iteration-count: 5;
         }
 
         .victory-content-modal {
-            width: 500px;
-            height: 450px;
+            width: auto;
+            height: auto;
             border-radius: 5px;
             text-align: center;
             border: 3px solid black;
@@ -355,6 +358,7 @@ animation-iteration-count: 5;
             Font-size: 1.2vw;
             font-weight: 600;
             color: rgb(8, 8, 175);
+            
         }
 
         .victory-img {
@@ -364,11 +368,12 @@ animation-iteration-count: 5;
 
         #victory-buttons {
             width: 120px;
-            margin: 5px;
             color: #fff;
             Font-family: "Quicksand", serif;
         }
 
+
+        
     .hide-cards{
         display:none
     }
@@ -451,3 +456,6 @@ animation-iteration-count: 5;
             font-size: 1.5vw;
             width: 150px;
         }
+
+
+        
