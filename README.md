@@ -75,7 +75,7 @@ I would like to implement a leader board system that records users scores and sh
 ## Technologies Used
 - [HTML](https://en.wikipedia.org/wiki/HTML) To enable the basic building on the website.
 - [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) for styling the website and the CSS grid system was used for the cards layout and responsiveness.
-- [JavaScript] https://www.javascript.com/) for the interactivity of the website. 
+- [JavaScript](https://www.javascript.com/) for the interactivity of the website. 
 - [Bootstrap](https://getbootstrap.com/) For the buttons.
 - [GitHub](https://github.com/) A remote location and where I can publish my website to host.
 - [Gitpod](https://www.gitpod.io/) My preferred IDE for building the website.
