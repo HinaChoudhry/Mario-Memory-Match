@@ -166,7 +166,8 @@ class MarioMemoryMatch {
 function ready() {
   let overlays = Array.from(document.getElementsByClassName("overlay-text"));
   let cards = Array.from(document.getElementsByClassName("card"));
-   let game = new MarioMemoryMatch (100, cards);
+  let game = new MarioMemoryMatch (100, cards);
+ 
 
   overlays.forEach(overlay => {
     overlay.addEventListener("click", () => {
@@ -174,6 +175,8 @@ function ready() {
       game.startGame();
     });
   });
+
+  
 
   cards.forEach(card => {
     card.addEventListener("click", () => {
@@ -196,6 +199,10 @@ function startAudio() {
 function stopAudio() {
   audioBg.pause();
   audioBg.currentTime = 0;
+}
+
+function reload(){
+  window.location.reload();
 }
 
 //Generating the different number of cards per difficulty

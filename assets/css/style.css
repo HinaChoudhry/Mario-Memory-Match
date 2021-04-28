@@ -415,11 +415,11 @@ animation-iteration-count: 5;
         align-items: center;
         z-index: 1;
         display:none;
-        }
+      }
 
         .game-over-content-modal {
-            width: 450px;
-            height: 400px;
+            width: 400px;
+            height: 350px;
             border-radius: 5px;
             text-align: center;
             border: 3px solid black;
@@ -438,7 +438,7 @@ animation-iteration-count: 5;
       
 
         .game-over-img {
-            width:50%;
+            width: 30%;
 
         }
 
