@@ -201,6 +201,8 @@ function stopAudio() {
   audioBg.currentTime = 0;
 }
 
+// Reload function
+
 function reload(){
   window.location.reload();
 }
