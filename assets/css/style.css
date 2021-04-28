@@ -262,13 +262,7 @@ animation-iteration-count: 5;
       transform: rotateY(180deg);
   }
 
-  .ncard{
-    align-self: flex-start;
-    transition: transform 100ms ease-in-out;
-    transform: translateY(-10px);
-  }
-
-  
+    
   .card-back{
     transform: rotateY(0); 
   }
@@ -296,7 +290,7 @@ animation-iteration-count: 5;
   @media (max-width:600px){
     .game-container{
         -ms-grid-columns: auto 10px auto;
-        grid-template-columns: repeat(2,auto);
+        grid-template-columns: repeat(6,auto);
     }
 
     .game-info-container {
@@ -306,15 +300,20 @@ animation-iteration-count: 5;
   }
 
 
-  /** Possible way to resize images in smaller viewports
+  
     @media screen and ( max-width: 1024px ) {
-        .card img { width: 50px;
+        .card img{ width: 50px;
                     height: auto;
+                
+                    
                 }
-        }
+                .card {
+                    width: 60px;
+                    height: 60px;
+                }
+            }
         
-        **/
-
+     
 
 
     /***Victory Modal***/
@@ -458,4 +457,4 @@ animation-iteration-count: 5;
         }
 
 
-        
+    
