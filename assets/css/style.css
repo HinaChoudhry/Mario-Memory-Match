@@ -290,7 +290,7 @@ animation-iteration-count: 5;
   @media (max-width:600px){
     .game-container{
         -ms-grid-columns: auto 10px auto;
-        grid-template-columns: repeat(6,auto);
+        grid-template-columns: repeat(4,auto);
     }
 
     .game-info-container {
@@ -313,7 +313,7 @@ animation-iteration-count: 5;
                 }
             }
         
-     
+     /*** Play around with the media queries for the card sizes in different viewports ***/
 
 
     /***Victory Modal***/
