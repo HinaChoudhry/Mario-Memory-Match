@@ -145,6 +145,13 @@ html, body{
 
 /** Game Page CSS */
 
+
+.bg-color {
+background-color: #568be9;
+
+
+}
+
 .controls {
     position: relative;
     background-color: #268ec3;
@@ -197,7 +204,7 @@ animation-iteration-count: 5;
 
   .game-container { 
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(6, auto);
     grid-gap: 20px;
     justify-content: center;
     perspective: 500px;
