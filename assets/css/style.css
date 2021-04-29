@@ -283,11 +283,32 @@ animation-iteration-count: 5;
     -o-transform: rotateY(0);
     
  }
+ /*** Media queries ***/
+
+ @media (max-width:1024px){
+    .game-container{
+     -ms-grid-columns: auto 10px auto;
+      grid-template-columns: repeat(5,auto);
+                    }
+                
+      .game-info-container {
+     flex-direction: column;
+       align-items: center;
+                    }
+                  
+                  
+     .card img{ width: 80px;
+     height: auto;
+                                
+        }
+        .card {
+         width: 100px;
+        height: 120px;
+        }
+      }
 
  
-
-  /*** Media queries ***/
-  @media (max-width:600px){
+  @media (max-width:700px){
     .game-container{
         -ms-grid-columns: auto 10px auto;
         grid-template-columns: repeat(4,auto);
@@ -297,12 +318,9 @@ animation-iteration-count: 5;
         flex-direction: column;
         align-items: center;
     }
-  }
-
-
   
-    @media screen and ( max-width: 1024px ) {
-        .card img{ width: 50px;
+  
+   .card img{ width: 50px;
                     height: auto;
                 
                     
@@ -312,8 +330,10 @@ animation-iteration-count: 5;
                     height: 60px;
                 }
             }
+
+ 
         
-     /*** Play around with the media queries for the card sizes in different viewports ***/
+     /*** Just need to add a media query to change the number of columns for 4 for tablets***/
 
 
     /***Victory Modal***/
