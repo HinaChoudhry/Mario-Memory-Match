@@ -11,6 +11,7 @@ The game page contains Super Mario themed images that players have to pair up, a
 ### User Stories
 As a user – 
 
+As a user – 
 - I want to be able to navigate the website easily.
 - I want to be able to restart the game if needed without going to the home screen. 
 - I want to be able to choose a difficulty level for the game. 
@@ -18,7 +19,8 @@ As a user –
 - I want the cards to shuffle on each new turn so I get a new set of cards per game. 
 - I want attractive colours and layout of the website to engage me. 
 - I want a game that can appeal to all ages.
-- I want to be able to turn music off and on to my liking.
+- I want to be able to turn background music on and off to my liking, rather than having it play automatically. 
+   
 
 
 ### Wireframes
@@ -99,6 +101,7 @@ Testing information can be found at [TESTING.md](https://github.com/HinaChoudhry
 - Another small dropdown should appear to the right, select /(root) and press save.
 - This should automatically refresh the page, deploying the website.
 - The deployed link will then be available in the GitHub Pages tab, which should have automatically reloaded.
+
 To run project locally
 - Click the “Clone or download” button under the repository name.
 - In the Clone with the HTTPs section, copy the clone URL for the repository.
@@ -112,30 +115,30 @@ Firstly, I would like to mention that the character Super Mario and the Super Ma
 ### Images
 The following images were obtained from the following websites -
 
-[Orignal Playing Card Images](http://www.mariouniverse.com/wp-content/img/sprites/nes/smb3/bonusgamerooms.png) 
-[Extra Card Images](https://www.spriters-resource.com/fullview/4296/)
-[Super Mario Homepage Image](https://www.seekpng.com/ima/u2q8a9a9w7u2t4r5/)
-[Super Mario Game Background Image](https://wallpapersafari.com/w/MPDzWp)
+- [Orignal Playing Card Images](http://www.mariouniverse.com/wp-content/img/sprites/nes/smb3/bonusgamerooms.png) 
+- [Extra Card Images](https://www.spriters-resource.com/fullview/4296/)
+- [Super Mario Homepage Image](https://www.seekpng.com/ima/u2q8a9a9w7u2t4r5/)
+- [Super Mario Game Background Image](https://wallpapersafari.com/w/MPDzWp)
 
 ### Gifs 
 The gifs for the website were obtained from - 
 
-[Bowser Gif](https://wifflegif.com/gifs/134347-mariobros-bowser-gif)
-[Victory Heroes Gif](https://wifflegif.com/gifs/706627-transparent-pixel-art-gif)
-[Boo Gif](https://imgur.com/gallery/xphpSOZ)
-[Princess Peach Gif](https://wifflegif.com/gifs/370524-princess-peach-credittoowner-gif)
+- [Bowser Gif](https://wifflegif.com/gifs/134347-mariobros-bowser-gif)
+- [Victory Heroes Gif](https://wifflegif.com/gifs/706627-transparent-pixel-art-gif)
+- [Boo Gif](https://imgur.com/gallery/xphpSOZ)
+- [Princess Peach Gif](https://wifflegif.com/gifs/370524-princess-peach-credittoowner-gif)
 
 ### Audio
 The following audio clips were obtained from - 
 
-[Game Background Music](https://downloads.khinsider.com/game-soundtracks/album/super-mario-bros.-3)
-[Game Sound Effects](https://themushroomkingdom.net/media/smb3/wav)
+- [Game Background Music](https://downloads.khinsider.com/game-soundtracks/album/super-mario-bros.-3)
+- [Game Sound Effects](https://themushroomkingdom.net/media/smb3/wav)
 
 ### Code
 For this project, I used two YouTube videos as guidance for how to make a memory card game. These were the videos of  [WebDevSimplied](https://www.youtube.com/watch?v=28VfzEiJgy4&t=0s) and [PortEXE](https://www.youtube.com/watch?v=3uuQ3g92oPQ). I followed WebDevSimplied's video to learn how to use the CSS Grid system and I adapted this for my own game for the different viewports, adding media queries and changing the card class and card img class to suit desktop, tablet and mobile devices in my own website. I used PortEXE's video for the core JavaScript of my game, building on top of his work with my own difficulty levels, ability to turn music on and off and adding more functions to my own game. 
 
 ### Acknowledgements
-I would like to thank my mentor, [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/), for his time, advice and comments in working with me to build my project. I would like to thank the Code Institute Slack forum for all their help and in particular the #peer-review-code channel for the input for my project. I would also like to thank the tutors at Code Institute for their valuable advice and my family and friends for testing the game numerous times.
+I would like to thank my mentor, [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/), for his time, advice and comments in working with me to build my project. I would like to thank the Code Institute Slack forum for all their help and in particular the #peer-review-code channel for the input for my project. I would also like to thank the tutors at [Code Institute](https://codeinstitute.net/) for their valuable advice, and my family and friends for testing the game numerous times.
 
 ## Disclaimer
 The content and images on this website are for educational purposes only.
