@@ -123,7 +123,7 @@ The website is responsive in Microsoft Edge and has no bugs.
 
 ### [Safari](https://www.apple.com/uk/safari/) 
 
-(need to check)
+The website displays correctly initially and it is responsive, however on actually flipping the cards, there is an animation error that appears.
 
 ## Bugs and resolutions
 
