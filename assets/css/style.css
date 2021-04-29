@@ -385,13 +385,17 @@ animation-iteration-count: 5;
 
         }
 
-        #victory-buttons {
+        #victory-button1 {
             width: 120px;
             color: #fff;
             Font-family: "Quicksand", serif;
         }
 
-
+        #victory-button2 {
+            width: 120px;
+            color: #fff;
+            Font-family: "Quicksand", serif;
+        }
         
     .hide-cards{
         display:none

@@ -1,3 +1,6 @@
+/* jshint esversion: 6 */
+/* globals $:false */
+
 // Difficulty modal 
 document.getElementById("game-button").addEventListener("click", function () {
   document.querySelector(".bg-modal").style.display = "flex";

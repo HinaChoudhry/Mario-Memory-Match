@@ -1,7 +1,10 @@
+/* jshint esversion: 6 */
+/* globals $:false */
+
 let cards = Array.from(document.getElementsByClassName("card"));
 let matchedCards = [];
 let cardsArray = cards;
-const cardCount = {5: 10, 7: 14, 9: 18}
+const cardCount = {5: 10, 7: 14, 9: 18};
 
 class AudioController {
   constructor () {
@@ -159,7 +162,7 @@ class MarioMemoryMatch {
 /**  This returns a boolean of true if busy is false and if matched cards doesn't include card, and card doesn't equal 
     cardToCheck, so that a card can be flipped.*/
   canFlipCard(card) {
-    return !this.busy && !matchedCards.includes(card) && card !== this.cardToCheck
+    return !this.busy && !matchedCards.includes(card) && card !== this.cardToCheck;
   }
 }
 
@@ -220,14 +223,14 @@ function pair(difficulty) {
     cards = level1.concat(level2);
     hideLevel3();
   } else {
-    cards = Array.from(document.getElementsByClassName("card"))
-  };
+    cards = Array.from(document.getElementsByClassName("card"));
+  }
 }
 
 function hideLevel2() {
   let levelTwoCards = Array.from(document.getElementsByClassName("Medium"));
   for (var i of levelTwoCards) {
-    i.classList.add("hide-cards")
+    i.classList.add("hide-cards");
   }
 }
 
