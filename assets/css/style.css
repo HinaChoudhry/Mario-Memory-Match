@@ -41,10 +41,6 @@ html, body{
 
 }
 
-#button {
-    font-size: 1.5vw;
-}
-
 /* Difficulty Modal CSS */ 
 
 .bg-modal {
@@ -143,6 +139,7 @@ html, body{
     Font-weight: 600;
 }
 
+/** Link text colour and hover colour **/
 
 .a-font {
     color:#fff;
@@ -206,7 +203,7 @@ animation-iteration-count: 5;
 
    }
 
-   /** Game cards and grid**/
+   /** Grid for card area **/
   * {
       box-sizing: border-box;
   }
@@ -233,6 +230,9 @@ animation-iteration-count: 5;
       text-align: center;
     margin: 10px;
   }
+
+
+  /** Cards classes to use for flipping cards and transformation of card flip **/
 
   .card {
       margin-bottom: 20px;
@@ -393,6 +393,8 @@ animation-iteration-count: 5;
             color: #fff;
             Font-family: "Quicksand", serif;
         }
+
+        /** Class to hide cards for difficulty levels **/
         
     .hide-cards{
         display:none

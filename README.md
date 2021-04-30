@@ -9,7 +9,6 @@ The website is for Super Mario fans both young and old school. The Super Mario t
 The game page contains Super Mario themed images that players have to pair up, as well as music from the original Super Mario Bros 3 game. There is a victory modal for when players match up all the pairs of the cards, which tells the user how long they took to complete and how many flips it took as well. There is also a “game over” modal, if the user runs out of time for matching the pairs.
 
 ### User Stories
-As a user – 
 
 As a user – 
 - I want to be able to navigate the website easily.
@@ -96,7 +95,7 @@ Testing information can be found at [TESTING.md](https://github.com/HinaChoudhry
 ## Deployment
 - To deploy the GitHub repository to GitHub pages the following steps were done
 - Select Settings at the top of the page.
-- Go the the GitHub Pages section from there, down the page.
+- Go the GitHub Pages section from there, down the page.
 - In the Source section, click the dropdown menu and select the 'Master Branch'. 
 - Another small dropdown should appear to the right, select /(root) and press save.
 - This should automatically refresh the page, deploying the website.

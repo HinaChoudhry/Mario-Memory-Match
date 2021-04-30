@@ -6,6 +6,9 @@ let matchedCards = [];
 let cardsArray = cards;
 const cardCount = {5: 10, 7: 14, 9: 18};
 
+
+// Audio controls
+
 class AudioController {
   constructor () {
     this.flipSound = new Audio("assets/audio/flip.wav");
@@ -33,6 +36,8 @@ class AudioController {
     this.gameOverSound.play();
   }
 }
+
+// Core game set up
 
 class MarioMemoryMatch {
   constructor (totalTime, cards) {
@@ -67,6 +72,8 @@ class MarioMemoryMatch {
     });
   }
 
+  // Card flipping 
+
   flipCard(card) {
     if (this.canFlipCard(card)) {
       this.audioController.flip();
@@ -83,6 +90,8 @@ class MarioMemoryMatch {
 
     }
     
+    
+
     checkForCardMatch(card) {
       if (this.getCardType(card) === this.getCardType(this.cardToCheck))
       this.cardMatch(card, this.cardToCheck);
@@ -92,6 +101,7 @@ class MarioMemoryMatch {
       this.cardToCheck = null;
      }
  
+// Checks to see if selected pair match and if they all match, calls the victory function
 
      cardMatch(card1, card2) {
       matchedCards.push(card1); 
@@ -99,11 +109,11 @@ class MarioMemoryMatch {
       card1.classList.add("matched");
       card2.classList.add("matched");
       this.audioController.match();
-      console.log(difficulty);
-      console.log(matchedCards.length);
       if (matchedCards.length === cardCount[difficulty]) {
       this.victory();}
   }
+
+  // Allows the cards to flip back if they don't match
   
     cardMisMatch(card1, card2) {
       this.busy = true; 
@@ -119,6 +129,8 @@ class MarioMemoryMatch {
 
     }
     
+    // Sets timer 
+
     startCountDown() {
       return setInterval(() => {
         this.timeRemaining--;
@@ -151,6 +163,8 @@ class MarioMemoryMatch {
     document.getElementById("victory-p").innerHTML = `You took ${totalTime} seconds and ${flipCount} flips!`;
   }
 
+  // The card shuffle for the game is the Fisher Yates shuffle. 
+
   shuffleCards() { 
     for (let i = cardsArray.length - 1; i > 0; i--) {
         let randomIndex = Math.floor(Math.random() * (i + 1));
@@ -160,7 +174,9 @@ class MarioMemoryMatch {
 }
 
 /**  This returns a boolean of true if busy is false and if matched cards doesn't include card, and card doesn't equal 
-    cardToCheck, so that a card can be flipped.*/
+     cardToCheck, so that a card can be flipped. It is taken from the youtube video https://www.youtube.com/watch?v=3uuQ3g92oPQ at 
+     minute 21:39 */
+
   canFlipCard(card) {
     return !this.busy && !matchedCards.includes(card) && card !== this.cardToCheck;
   }
