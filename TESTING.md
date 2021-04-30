@@ -160,7 +160,7 @@ The website displays correctly initially and it is responsive, however on actual
     * Resolved by calling the function of 'pair(difficulty)'.
 - Victory modal was not showing when the user won the game. 
     * The If statement that was to check if the number of matched cards equalled to the number of cards per difficulty array was incorrect. Resolved by making a countCard object and changing the If statement so the number of matched cards per difficulty level would match the number in the countCard object, for each specific difficulty level. 
-- Game over modal overlay was cut off from the bottom. 
+- Game over modal overlay was cut off from bottom. 
     * Resolved by changing the the modal position to relative. 
 - Part of the card front was showing on Safari, with the user able to see a bit of the image of the card front at the bottom of the card. 
     * Removed the card transformation from CSS. 

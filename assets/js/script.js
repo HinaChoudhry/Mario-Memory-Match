@@ -6,7 +6,6 @@ let matchedCards = [];
 let cardsArray = cards;
 const cardCount = {5: 10, 7: 14, 9: 18};
 
-
 // Audio controls
 
 class AudioController {
@@ -20,18 +19,20 @@ class AudioController {
   stopMusic() {
     this.bgMusic.pause();
     this.bgMusic.currentTime = 0;
-}
+  }
+  
   flip() {
     this.flipSound.play();
-  
   }
+
   match() {
     this.matchSound.play();
   }
+
   victory() {
-   
     this.victorySound.play();
   }
+
   gameOver() {
     this.gameOverSound.play();
   }
@@ -41,7 +42,6 @@ class AudioController {
 
 class MarioMemoryMatch {
   constructor (totalTime, cards) {
-   
     this.totalTime = totalTime;
     this.timeRemaining = totalTime;
     this.timer = document.getElementById("time-remaining");
@@ -52,18 +52,16 @@ class MarioMemoryMatch {
     this.cardToCheck = null;
     this.totalClicks = 0;
     this.timeRemaining = this.totalTime;
-    
     this.busy = true;
     setTimeout(() => {
       this.shuffleCards();
       this.countDown = this.startCountDown();
       this.busy = false;
       }, 500);
-      this.hideCards();
-        this.timer.innerText = this.timeRemaining;
-      this.ticker.innerText = this.totalClicks;
-
- } 
+    this.hideCards();
+    this.timer.innerText = this.timeRemaining;
+    this.ticker.innerText = this.totalClicks;
+  } 
 
   hideCards() {
     cardsArray.forEach(card => {
@@ -72,7 +70,7 @@ class MarioMemoryMatch {
     });
   }
 
-  // Card flipping 
+// Card flipping 
 
   flipCard(card) {
     if (this.canFlipCard(card)) {
@@ -82,40 +80,38 @@ class MarioMemoryMatch {
       card.classList.add("visible");
 
       if (this.cardToCheck) 
-      this.checkForCardMatch(card);
-        else
+        this.checkForCardMatch(card);
+      else
         this.cardToCheck = card;
   
     }
-
-    }
+  }
     
-    
-
-    checkForCardMatch(card) {
-      if (this.getCardType(card) === this.getCardType(this.cardToCheck))
+  checkForCardMatch(card) {
+    if (this.getCardType(card) === this.getCardType(this.cardToCheck))
       this.cardMatch(card, this.cardToCheck);
-      else 
+    else 
       this.cardMisMatch(card, this.cardToCheck);
  
-      this.cardToCheck = null;
+    this.cardToCheck = null;
      }
  
 // Checks to see if selected pair match and if they all match, calls the victory function
 
-     cardMatch(card1, card2) {
+  cardMatch(card1, card2) {
       matchedCards.push(card1); 
       matchedCards.push(card2);
       card1.classList.add("matched");
       card2.classList.add("matched");
       this.audioController.match();
       if (matchedCards.length === cardCount[difficulty]) {
-      this.victory();}
-  }
+        this.victory();
+      }
+    }
 
-  // Allows the cards to flip back if they don't match
+// Allows the cards to flip back if they don't match
   
-    cardMisMatch(card1, card2) {
+  cardMisMatch(card1, card2) {
       this.busy = true; 
       setTimeout(() => {
         card1.classList.remove("visible");
@@ -126,26 +122,24 @@ class MarioMemoryMatch {
       
     getCardType(card) {
       return card.getElementsByClassName("card-value")[0].src;
-
     }
     
-    // Sets timer 
+// Sets timer 
 
-    startCountDown() {
-      return setInterval(() => {
-        this.timeRemaining--;
-        this.timer.innerText = this.timeRemaining;
-        if(this.timeRemaining === 0)
+  startCountDown() {
+    return setInterval(() => {
+      this.timeRemaining--;
+      this.timer.innerText = this.timeRemaining;
+      if(this.timeRemaining === 0)
           this.gameOver();
     }, 1000);
   }
     
 
-    gameOver(){
+  gameOver(){
       clearInterval(this.countDown);
       this.audioController.gameOver();
       document.getElementById("game-over").classList.add("visible");
-      
     }
 
     victory() {
@@ -153,8 +147,7 @@ class MarioMemoryMatch {
       this.audioController.victory();
       document.getElementById("victory-text").classList.add("visible");
       this.stats();
-            
-  }
+    }
   
   stats() {
     let timeLeft = parseInt(document.getElementById("time-remaining").innerHTML);
@@ -163,7 +156,7 @@ class MarioMemoryMatch {
     document.getElementById("victory-p").innerHTML = `You took ${totalTime} seconds and ${flipCount} flips!`;
   }
 
-  // The card shuffle for the game is the Fisher Yates shuffle. 
+// The card shuffle for the game is the Fisher Yates shuffle. 
 
   shuffleCards() { 
     for (let i = cardsArray.length - 1; i > 0; i--) {
@@ -187,7 +180,6 @@ function ready() {
   let cards = Array.from(document.getElementsByClassName("card"));
   let game = new MarioMemoryMatch (100, cards);
  
-
   overlays.forEach(overlay => {
     overlay.addEventListener("click", () => {
       overlay.classList.remove("visible");
@@ -195,7 +187,6 @@ function ready() {
     });
   });
 
-  
   cards.forEach(card => {
     card.addEventListener("click", () => {
       game.flipCard(card);
