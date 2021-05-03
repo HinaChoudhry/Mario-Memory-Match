@@ -48,16 +48,22 @@ class MarioMemoryMatch {
     this.ticker = document.getElementById("flips");
     this.audioController = new AudioController();
   }
+
+  // This is called when the game starts 
   startGame() {
     this.cardToCheck = null;
+    // Number of flips at start is reset to 0
     this.totalClicks = 0;
+    // Timer resets with each new game
     this.timeRemaining = this.totalTime;
     this.busy = true;
+    // This allows the cards to shuffle at the start of each game 
     setTimeout(() => {
       this.shuffleCards();
       this.countDown = this.startCountDown();
       this.busy = false;
       }, 500);
+      // This hides the card faces at the start of each game
     this.hideCards();
     this.timer.innerText = this.timeRemaining;
     this.ticker.innerText = this.totalClicks;
@@ -135,13 +141,15 @@ class MarioMemoryMatch {
     }, 1000);
   }
     
-
+// Game over function that runs if the timer gets to 0
   gameOver(){
       clearInterval(this.countDown);
       this.audioController.gameOver();
       document.getElementById("game-over").classList.add("visible");
     }
 
+
+// Victory function that runs if all the cards are matched
     victory() {
       clearInterval(this.countDown);
       this.audioController.victory();
@@ -149,6 +157,8 @@ class MarioMemoryMatch {
       this.stats();
     }
   
+    /**  This gets the number of time it took and number of flips it took to complete the game and displays the figures 
+    * in the victory modal **/
   stats() {
     let timeLeft = parseInt(document.getElementById("time-remaining").innerHTML);
     let totalTime = 100 - timeLeft;
@@ -156,7 +166,8 @@ class MarioMemoryMatch {
     document.getElementById("victory-p").innerHTML = `You took ${totalTime} seconds and ${flipCount} flips!`;
   }
 
-// The card shuffle for the game is the Fisher Yates shuffle. 
+/** The card shuffle for the game is the Fisher Yates shuffle. This was used from the YouTube
+ * video https://www.youtube.com/watch?v=3uuQ3g92oPQ */
 
   shuffleCards() { 
     for (let i = cardsArray.length - 1; i > 0; i--) {

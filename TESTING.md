@@ -124,7 +124,7 @@ In the tablet view, the overlay remains the same, with the semi transparent over
 In mobile, the modal again scales down to fit the viewport.
 
 
-## Responsiveness in browsers
+## Browser Compatibility 
 
 ### [Google Chrome](https://www.google.co.uk/chrome/?brand=CHBD&gclid=EAIaIQobChMIi5nY65OY6gIVKoBQBh15wQBrEAAYASAAEgKlOvD_BwE&gclsrc=aw.ds)
 
