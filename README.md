@@ -115,7 +115,7 @@ Firstly, I would like to mention that the character Super Mario and the Super Ma
 The following images were obtained from the following websites -
 
 - [Orignal Playing Card Images](http://www.mariouniverse.com/wp-content/img/sprites/nes/smb3/bonusgamerooms.png) 
-- [Extra Card Images](https://www.spriters-resource.com/fullview/4296/)
+- [Extra Card Images](https://www.spriters-resource.com/snes/smassmb3/)
 - [Super Mario Homepage Image](https://www.seekpng.com/ima/u2q8a9a9w7u2t4r5/)
 - [Super Mario Game Background Image](https://wallpapersafari.com/w/MPDzWp)
 
